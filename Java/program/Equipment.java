@@ -2,12 +2,7 @@ public class Equipment {
   private String name;
   private int str, def, mgc;
 
-  public Equipment() {
-    name = "";
-    str = 0;
-    def = 0;
-    mgc = 0;
-  }
+  public Equipment() {}
   public Equipment(String n, int s, int d, int m) {
     setName(n);
     setStr(s);
