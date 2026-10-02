@@ -1,4 +1,5 @@
-C++/program.exe
-C++/*.o
-Java/*.class
-Python/__pycache__
+C++/program/program.exe
+C++/program/*.o
+Java/program/*.class
+Python/program/__pycache__
+diagram.drawio
