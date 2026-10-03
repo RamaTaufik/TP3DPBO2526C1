@@ -21,9 +21,9 @@ Dalam program ini, terdapat 8 kelas, dengan dua kelas utama:
     - Nama (`name`), untuk nama anggota;
     - `health`, menandakan ketangguhan tiap anggota;
     - *Stat* dasar (`base_stat`), terdiri dari `STR` (*strength*, kekuatan fisik), `DEF` (*defence*, kekuatan bertahan), dan `MGC` (*magic*, kekuatan sihir);
-    - Perlengakapn (`equipments`), yaitu perlengkapan apa saja yang dimiliki tiap anggota.
-  
+    - Perlengakapan (`equipments`), yaitu perlengkapan apa saja yang dimiliki tiap anggota.
   Selain itu, kelas ini juga memiliki metode `getFin_()` untuk mendapat nilai akhir tiap *stat* dasar yang sudah dimodifikasi dengan *stat* dari `equipments`;
+
   2. `Equipment`, yaitu perlengkapan yang bisa digunakan oleh anggota. Tiap perlengkapan memiliki nama dan *stat*-nya tersendiri yang dapat mempengaruhi *stat* dasar penggunanya, baik positif maupun negatif;
 
 Kedua kelas ini memiliki hubungan **agregasi**, dimana tiap anggota **memiliki** `Equipment` mereka masing-masing, namun `Equipment` tetap ada walau sedang tidak ada yang menggunakannya.
@@ -32,7 +32,7 @@ Tiap anggota dapat mengambil salah satu dari 6 turunan *role*, terdiri dari *rol
   4. `Ranger`, *role* dasar yang pandai dalam serangan jarak jauh. Dilengkapi dengan *stat* *role* khusus untuk serangan jarak jauh (`range_str`), juga *skill* serangan jarak jauh (`rangeAtk()`);
   5. `Healer`, *role* dasar yang pandai dalam penyembuhan. Dilengkapi dengan *stat* *role* khusus untuk kekuatan penyembuhan (`heal_str`), juga *skill* penyembuhan (`castHeal()`);
 
-Dari 3 *role* dasar di atas, terdapat 3 *role* lanjutan yang merupakan kombinasi dari dua *role* dasar. *Role* lanjutan mewarisi *stat* khusus dari kedua *role* asal-nya, namun tidak dapat menggunakan salah satu *skill* dari *role* dasar (*ketika mencoba memanggil metode skill tersebut, selalu me-`return` 0*). *Role* lanjutan juga memiliki tambahan satu *stat* dan satu *skill* khusus:
+Dari 3 *role* dasar di atas, terdapat 3 *role* lanjutan yang merupakan kombinasi dari dua *role* dasar. *Role* lanjutan mewarisi *stat* khusus dari kedua *role* asal-nya, namun tidak dapat menggunakan salah satu *skill* dari *role* dasar (*ketika mencoba memanggil metode skill tersebut, selalu me-`return` 0*). *Skill* turunan yang dapat digunakan juga dirombak agar menyesuaikan kondisi *role* lanjutan yang harus menyeimbangkan lebih banyak *stat* *role* khusus ketimbang *role* dasar. *Role* lanjutan juga memiliki tambahan satu *stat* dan satu *skill* khusus:
   6. `Paladin`, gabungan dari `Warrior` dan `Healer`. *Role* ini 'kehilangan' *skill* `castHeal()`, namun mendapat tambahan *skill* pertahanan (`castGuard()`), serta *stat* `STR` khusus bertahan (`guard_str`). `castGuard()` bekerja dengan mengurangi langsung serangan yang diterima;
   7. `Mercenary`, gabungan dari `Ranger` dan `Warrior`. *Role* ini 'kehilangan' *skill* `meleeAtk()`, namun mendapat tambahan *skill* serangan mengendap-endap (`sneakAtk()`), serta *stat* `STR` khusus mengendap-endap (`stealth_str`). `sneakAtk()` menghasilkan kerusakan yang paling tinggi dari semua *skill* serangan yang ada disini;
   6. `Bard`, gabungan dari `Healer` dan `Ranger`. *Role* ini 'kehilangan' *skill* `rangeAtk()`, namun mendapat tambahan *skill* dukungan serangan (`castBuff()`), serta *stat* `STR` khusus dukungan (`buff_str`). `castBuff()` bekerja dengan menambah langsung serangan yang akan ditimbulkan;
