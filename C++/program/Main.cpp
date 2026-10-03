@@ -102,8 +102,6 @@ int main() {
   std::vector<std::shared_ptr<Role>> members;
   std::string choice = "0";
 
-  // Data dummy
-
   std::cout << "   _____   __ __  __   __  _____  __  __       _____   __ __  __  __    ____\n";
   std::cout << "  / // /  / // / /  |_/ / /  __/ / / / /      / ___/  / // / / / / /   / /| |\n";
   std::cout << " / /_/ / / // / / /|_/ / /__  / / / / /_     / /_/ / / // / / / / /_  / /_/ /\n";

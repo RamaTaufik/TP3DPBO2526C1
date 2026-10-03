@@ -93,8 +93,6 @@ public class Main {
     ArrayList<Role> members = new ArrayList<>(); // ArrayList data member guild
     String choice = "0"; // Variabel untuk input opsi
 
-    // Data dummy
-
     System.out.print("   _____   __ __  __   __  _____  __  __       _____   __ __  __  __    ____\n");
     System.out.print("  / // /  / // / /  |_/ / /  __/ / / / /      / ___/  / // / / / / /   / /| |\n");
     System.out.print(" / /_/ / / // / / /|_/ / /__  / / / / /_     / /_/ / / // / / / / /_  / /_/ /\n");
