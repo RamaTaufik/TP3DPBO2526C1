@@ -44,7 +44,7 @@ Dari 3 *role* dasar di atas, terdapat 3 *role* lanjutan yang merupakan kombinasi
 Khusus untuk implementasi Java yang tidak mendukung *multiple inheritance*, ada tambahan 3 *interface* independen (`IWarrior`, `IRanger`, `IHealer`). Selain itu, karena *interface* di Java tidak dapat mengandung atribut, maka atribut dari *role interface* yang di-implementasi-kan pada *role* lanjutan, di-definisi-kan langsung di *role* lanjutan (*misal, role `Bard` diturunkan dari `Ranger` dan meng-implementasi-kan `IHealer`, maka dalam kelas role `Bard`, akan di-definisi-kan ulang untuk atribut role `Healer`*). 3 *interface* independen ini dibuat sehubungan anggota juga tetap dapat mengambil *role*-*role* dasar (*interface* tidak bisa di-instantiasi) sehingga 3 *role* dasar harus tetap dibuat kelasnya masing-masing. Ditambah, karena *interface* tidak bisa diwarisi dari kelas yang dimana kelas `Role` memiliki atribut yang cukup banyak, maka dari itu saya mengambil keputusan untuk mewarisi kelas `Role` kepada 3 kelas *role* dasar dan membuat 3 *interface* independen, ketimbang membuat kelas `Role` menjadi *interface* lalu mengimplementasikan kelas *role* dasar lewat *interface* yang diwarisi dari *interface* `Role`.
 
 # ALUR
-Saat pertama kali membuka aplikasi, pengguna akan disambut menu (CLI)/*homepage* (*Web*), seperti berikut:
+Saat pertama kali membuka aplikasi, pengguna akan disambut menu seperti berikut:
 
 ![Menu](Java/docs/home.png)
 
