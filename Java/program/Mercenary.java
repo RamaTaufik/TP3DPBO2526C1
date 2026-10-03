@@ -46,7 +46,9 @@ public class Mercenary extends Warrior implements IRanger {
   }
 
   // Fungsi untuk mendapat seberapa besar kerusakan (damage) yang ditimbulkan Mercenary ketika melakukan
-  // serangan jarak jauh (ranged attack)
+  // serangan jarak jauh (ranged attack). Perhitungan dibawah dimodifikasi dengan kondisi role Mercenary yang
+  // perlu menyeimbangkan 3 stat kelas, beda dengan role Ranger yang hanya memiliki stat kelas
+  // range_str
   public int rangeAtk() {
     return ((Math.max(0, getFinStr())) + range_str + stealth_str) / 2;
   }

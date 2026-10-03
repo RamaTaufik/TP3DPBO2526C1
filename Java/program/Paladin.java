@@ -46,7 +46,9 @@ public class Paladin extends Healer implements IWarrior {
   }
 
   // Fungsi untuk mendapat seberapa besar kerusakan (damage) yang ditimbulkan Paladin ketika melakukan
-  // serangan jarak dekat (melee attack)
+  // serangan jarak dekat (melee attack). Perhitungan dibawah dimodifikasi dengan kondisi role Paladin yang
+  // perlu menyeimbangkan 3 stat kelas, beda dengan role Warrior yang hanya memiliki stat kelas
+  // melee_str
   public int meleeAtk() {
     return ((Math.max(0, getFinStr())) + melee_str + guard_str) / 2;
   }

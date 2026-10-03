@@ -46,7 +46,9 @@ public class Bard extends Ranger implements IHealer {
   }
 
   // Fungsi untuk mendapat seberapa besar health yang disembuhkan oleh Bard ketika meng-invokasi
-  // penyembuhan (cast heal)
+  // penyembuhan (cast heal). Perhitungan dibawah dimodifikasi dengan kondisi role Bard yang
+  // perlu menyeimbangkan 3 stat kelas, beda dengan role Healer yang hanya memiliki stat kelas
+  // heal_str
   public int castHeal() {
     return ((Math.max(0, getFinMgc())) + heal_str + buff_str) / 2;
   }
