@@ -22,6 +22,7 @@ Dalam program ini, terdapat 8 kelas, dengan dua kelas utama:
       - `health`, menandakan ketangguhan tiap anggota;
       - *Stat* dasar (`base_stat`), terdiri dari `STR` (*strength*, kekuatan fisik), `DEF` (*defence*, kekuatan bertahan), dan `MGC` (*magic*, kekuatan sihir);
       - Perlengakapan (`equipments`), yaitu perlengkapan apa saja yang dimiliki tiap anggota.
+      
   Selain itu, kelas ini juga memiliki metode `getFin_()` untuk mendapat nilai akhir tiap *stat* dasar yang sudah dimodifikasi dengan *stat* dari `equipments`;
 
   2. `Equipment`, yaitu perlengkapan yang bisa digunakan oleh anggota. Tiap perlengkapan memiliki nama dan *stat*-nya tersendiri yang dapat mempengaruhi *stat* dasar penggunanya, baik positif maupun negatif;
