@@ -16,6 +16,7 @@ Bumsil Guild merupakan aplikasi yang mengelola data anggota Serikat Petualang Bu
 ![Diagram gambaran relasi kelas](diagram.png)
 
 Dalam program ini, terdapat 8 kelas, dengan dua kelas utama: 
+
   1. `Role`, *super-class* yang menjadi *parent* tiap kelas *role* lainnya. Tiap anggota nantinya akan di-instantiasi dari anak-anak kelas ini. Kelas ini mencakup atribut yang pastinya dimiliki tiap *role*:
       - `ID`, kode unik khusus yang menjadi pembeda utama antar anggota;
       - Nama (`name`), untuk nama anggota;
@@ -29,11 +30,13 @@ Dalam program ini, terdapat 8 kelas, dengan dua kelas utama:
 
 Kedua kelas ini memiliki hubungan **agregasi**, dimana tiap anggota **memiliki** `Equipment` mereka masing-masing, namun `Equipment` tetap ada walau sedang tidak ada yang menggunakannya.
 Tiap anggota dapat mengambil salah satu dari 6 turunan *role*, terdiri dari *role* dasar dan turunan. *Role* dasar dilengkapi dengan satu *stat* tambahan dan satu *skill* (*cek [CATATAN](#catatan) dibawah*) khusus *role*:
+
   3. `Warrior`, *role* dasar yang pandai dalam serangan jarak dekat. Dilengkapi dengan *stat* *role* khusus untuk serangan jarak dekat (`melee_str`), juga *skill* serangan jarak dekat (`meleeAtk()`);
   4. `Ranger`, *role* dasar yang pandai dalam serangan jarak jauh. Dilengkapi dengan *stat* *role* khusus untuk serangan jarak jauh (`range_str`), juga *skill* serangan jarak jauh (`rangeAtk()`);
   5. `Healer`, *role* dasar yang pandai dalam penyembuhan. Dilengkapi dengan *stat* *role* khusus untuk kekuatan penyembuhan (`heal_str`), juga *skill* penyembuhan (`castHeal()`);
 
 Dari 3 *role* dasar di atas, terdapat 3 *role* lanjutan yang merupakan kombinasi dari dua *role* dasar. *Role* lanjutan mewarisi *stat* khusus dari kedua *role* asal-nya, namun tidak dapat menggunakan salah satu *skill* dari *role* dasar (*ketika mencoba memanggil metode skill tersebut, selalu me-`return` 0*). *Skill* turunan yang dapat digunakan juga dirombak agar menyesuaikan kondisi *role* lanjutan yang harus menyeimbangkan lebih banyak *stat* *role* khusus ketimbang *role* dasar. *Role* lanjutan juga memiliki tambahan satu *stat* dan satu *skill* khusus:
+
   6. `Paladin`, gabungan dari `Warrior` dan `Healer`. *Role* ini 'kehilangan' *skill* `castHeal()`, namun mendapat tambahan *skill* pertahanan (`castGuard()`), serta *stat* `STR` khusus bertahan (`guard_str`). `castGuard()` bekerja dengan mengurangi langsung serangan yang diterima;
   7. `Mercenary`, gabungan dari `Ranger` dan `Warrior`. *Role* ini 'kehilangan' *skill* `meleeAtk()`, namun mendapat tambahan *skill* serangan mengendap-endap (`sneakAtk()`), serta *stat* `STR` khusus mengendap-endap (`stealth_str`). `sneakAtk()` menghasilkan kerusakan yang paling tinggi dari semua *skill* serangan yang ada disini;
   6. `Bard`, gabungan dari `Healer` dan `Ranger`. *Role* ini 'kehilangan' *skill* `rangeAtk()`, namun mendapat tambahan *skill* dukungan serangan (`castBuff()`), serta *stat* `STR` khusus dukungan (`buff_str`). `castBuff()` bekerja dengan menambah langsung serangan yang akan ditimbulkan;
