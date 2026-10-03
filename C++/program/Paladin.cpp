@@ -20,7 +20,7 @@ class Paladin: public Warrior, public Healer {
   
     int setGuardStr(int gs) {
       if(gs < 0) {
-        std::cout << "Stat melee STR harus bilangan bulat positif!";
+        std::cout << "Stat guard STR harus bilangan bulat positif!";
         return -1;
       }
 

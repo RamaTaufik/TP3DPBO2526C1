@@ -34,7 +34,7 @@ public class Paladin extends Healer implements IWarrior {
   
   public int setGuardStr(int gs) {
     if(gs < 0) {
-      System.out.println("Stat melee STR harus bilangan bulat positif!");
+      System.out.println("Stat guard STR harus bilangan bulat positif!");
       return -1;
     }
 
