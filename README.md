@@ -17,11 +17,11 @@ Bumsil Guild merupakan aplikasi yang mengelola data anggota Serikat Petualang Bu
 
 Dalam program ini, terdapat 8 kelas, dengan dua kelas utama: 
   1. `Role`, *super-class* yang menjadi *parent* tiap kelas *role* lainnya. Tiap anggota nantinya akan di-instantiasi dari anak-anak kelas ini. Kelas ini mencakup atribut yang pastinya dimiliki tiap *role*:
-    - `ID`, kode unik khusus yang menjadi pembeda utama antar anggota;
-    - Nama (`name`), untuk nama anggota;
-    - `health`, menandakan ketangguhan tiap anggota;
-    - *Stat* dasar (`base_stat`), terdiri dari `STR` (*strength*, kekuatan fisik), `DEF` (*defence*, kekuatan bertahan), dan `MGC` (*magic*, kekuatan sihir);
-    - Perlengakapan (`equipments`), yaitu perlengkapan apa saja yang dimiliki tiap anggota.
+      - `ID`, kode unik khusus yang menjadi pembeda utama antar anggota;
+      - Nama (`name`), untuk nama anggota;
+      - `health`, menandakan ketangguhan tiap anggota;
+      - *Stat* dasar (`base_stat`), terdiri dari `STR` (*strength*, kekuatan fisik), `DEF` (*defence*, kekuatan bertahan), dan `MGC` (*magic*, kekuatan sihir);
+      - Perlengakapan (`equipments`), yaitu perlengkapan apa saja yang dimiliki tiap anggota.
   Selain itu, kelas ini juga memiliki metode `getFin_()` untuk mendapat nilai akhir tiap *stat* dasar yang sudah dimodifikasi dengan *stat* dari `equipments`;
 
   2. `Equipment`, yaitu perlengkapan yang bisa digunakan oleh anggota. Tiap perlengkapan memiliki nama dan *stat*-nya tersendiri yang dapat mempengaruhi *stat* dasar penggunanya, baik positif maupun negatif;
